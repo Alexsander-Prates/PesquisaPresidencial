@@ -42,6 +42,7 @@ public class Principal {
         Double candidatoLulaTotalVotos = pesquisaVoto.calcularVotos(Arrays.asList(votoLula, votoLula2), "Lula");
         Double candidatoCiroTotalVotos = pesquisaVoto.calcularVotos(Arrays.asList(votoCiro,votoCiro1), "Ciro");
         Double candidatoBolsonaroTotalVotos = pesquisaVoto.calcularVotos(Arrays.asList(votoBolsonaro,votoBolsonaro1), "Bolsonaro");
+
         System.out.println("O Candidato: " + candidatoLula.getNome() + " teve " + candidatoLulaTotalVotos + " votos");
         System.out.println("O Candidato: " + candidatoCiro.getNome() + " teve " + candidatoCiroTotalVotos + " votos");
         System.out.println("O Candidato: " + candidatoBolsonaro.getNome() + " teve " + candidatoBolsonaroTotalVotos + " votos");
