@@ -17,9 +17,8 @@ public class Voto {
 
     }
 
-    public Voto(Double quantidade, Double totalVotos, Candidato candidato,Pesquisa pesquisa) {
+    public Voto(Double quantidade, Candidato candidato,Pesquisa pesquisa) {
         this.quantidade = quantidade;
-        this.totalVotos = totalVotos;
         this.candidato = candidato;
         this.pesquisa = pesquisa;
     }
@@ -50,11 +49,5 @@ public class Voto {
         this.quantidade = quantidade;
     }
 
-    public Double getTotalVotos() {
-        return totalVotos;
-    }
 
-    public void setTotalVotos(Double totalVotos) {
-        this.totalVotos = totalVotos;
-    }
 }

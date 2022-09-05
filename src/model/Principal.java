@@ -15,12 +15,12 @@ public class Principal {
         Pesquisa pesquisa2 = new Pesquisa("IBOPE","RJ");
         Pesquisa pesquisa3 = new Pesquisa("Dada Brasil","RS");
 
-        Voto votoLula = new Voto(10.8,null,candidatoLula,pesquisa1);
-        Voto votoLula2 = new Voto(20.8,null,candidatoLula,pesquisa1);
-        Voto votoCiro = new Voto(1.8,null,candidatoCiro,pesquisa1);
-        Voto votoCiro1 = new Voto(2.0,null,candidatoCiro,pesquisa1);
-        Voto votoBolsonaro = new Voto(15.7,null,candidatoBolsonaro,pesquisa1);
-        Voto votoBolsonaro1 = new Voto(7.3,null,candidatoBolsonaro,pesquisa1);
+        Voto votoLula = new Voto(10.8,candidatoLula,pesquisa1);
+        Voto votoLula2 = new Voto(20.8,candidatoLula,pesquisa1);
+        Voto votoCiro = new Voto(1.8,candidatoCiro,pesquisa1);
+        Voto votoCiro1 = new Voto(2.0,candidatoCiro,pesquisa1);
+        Voto votoBolsonaro = new Voto(15.7,candidatoBolsonaro,pesquisa1);
+        Voto votoBolsonaro1 = new Voto(7.3,candidatoBolsonaro,pesquisa1);
 
 
         Voto[] lista = new Voto[6];
