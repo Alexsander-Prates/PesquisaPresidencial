@@ -1,23 +1,24 @@
 package model;
 
-public class PesquisaVoto extends Voto implements CalcularVotos{
+import java.util.List;
 
+public class PesquisaVoto implements CalcularVotos{
+    private Double quantidade =0.0;
+    private Double totalVotos =0.0;
 
     public PesquisaVoto() {
     }
 
 
-    public PesquisaVoto(Double quantidade, Double totalVotos, Candidato candidato, Pesquisa pesquisa) {
-        super(quantidade, totalVotos, candidato, pesquisa);
-
-    }
-
     @Override
-    public void calcularVotos() {
-        if(getQuantidade() > 1){
-            setTotalVotos(getQuantidade()+getQuantidade());
-        } else {
-            setTotalVotos(getQuantidade());
-        }
+    public Double calcularVotos(List<Voto> listVotos, String nomeCandidato) {
+
+        listVotos.forEach(voto -> {
+            if(voto.getCandidato().getNome().equals(nomeCandidato)){
+                quantidade = quantidade + voto.getQuantidade();
+                totalVotos = totalVotos + quantidade;
+            }
+        });
+        return quantidade;
     }
 }
