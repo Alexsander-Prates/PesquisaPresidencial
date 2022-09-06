@@ -10,7 +10,7 @@ public class CandidatoController {
 
 
     public void salvar(Candidato candidato) throws Exception{
-        if (candidato.getNome() == null || candidato.getNome().length() <3){
+        if (candidato.getNome() == null || candidato.getNome().length() <2){
             throw new Exception("Nome inválido para salvar");
         }
         CandidatoDao.getInstance().salvar(candidato);
@@ -18,7 +18,7 @@ public class CandidatoController {
     }
 
     public void atualizar(Candidato candidato) throws Exception{
-        if (candidato.getNome() == null || candidato.getNome().length() <3){
+        if (candidato.getNome() == null || candidato.getNome().length() <2){
             throw new Exception("Nome inválido para atualizar");
         }
         CandidatoDao.getInstance().salvar(candidato);

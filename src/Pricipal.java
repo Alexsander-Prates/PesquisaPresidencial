@@ -7,8 +7,8 @@ public class Pricipal {
     public static void main(String[] args) {
 
         Candidato candidato = new Candidato();
-        candidato.setId(01);
         candidato.setNome("Lula");
+        candidato.setId(01);
         candidato.setCodigo(13);
 
         Candidato candidato2 = new Candidato();
@@ -33,8 +33,5 @@ public class Pricipal {
         for(Candidato c : controller.listar()){
             System.out.println(c.getNome()+c.getId()+c.getCodigo());
         }
-
-
-
     }
 }
