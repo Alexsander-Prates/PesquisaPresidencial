@@ -30,7 +30,7 @@ public class Pricipal {
         }
 
         for(Candidato c : controller.listar()){
-            System.out.println(c.getNome()+c.getId()+c.getCodigo());
+            System.out.println("Salvo o nome: "+c.getNome()+" com Id: "+c.getId()+" e Código:"+ c.getCodigo());
         }
     }
 }
