@@ -1,31 +1,30 @@
 import controller.CandidatoController;
 import model.Candidato;
-import model.Voto;
 
 public class Pricipal {
 
     public static void main(String[] args) {
 
-        Candidato candidato = new Candidato();
-        candidato.setNome("Lula");
-        candidato.setId(01);
-        candidato.setCodigo(13);
+        Candidato candidatoLula = new Candidato();
+        candidatoLula.setNome("Lula");
+        candidatoLula.setId(01);
+        candidatoLula.setCodigo(13);
 
-        Candidato candidato2 = new Candidato();
-        candidato.setId(02);
-        candidato.setNome("Ciro");
-        candidato.setCodigo(12);
+        Candidato candidatoCiro = new Candidato();
+        candidatoCiro.setId(02);
+        candidatoCiro.setNome("Ciro");
+        candidatoCiro.setCodigo(12);
 
-        Candidato candidato3 = new Candidato();
-        candidato.setId(03);
-        candidato.setNome("Bolsonaro");
-        candidato.setCodigo(22);
+        Candidato candidatoBolsonaro = new Candidato();
+        candidatoBolsonaro.setId(03);
+        candidatoBolsonaro.setNome("Bolsonaro");
+        candidatoBolsonaro.setCodigo(22);
 
         CandidatoController controller = new CandidatoController();
         try{
-            controller.salvar(candidato);
-            controller.salvar(candidato2);
-            controller.salvar(candidato3);
+            controller.salvar(candidatoLula);
+            controller.salvar(candidatoCiro);
+            controller.salvar(candidatoBolsonaro);
         } catch (Exception exception){
             System.out.println(exception.getMessage());
         }
