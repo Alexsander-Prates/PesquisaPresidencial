@@ -1,19 +1,32 @@
 package model;
 
-import java.util.List;
-
 public class Candidato {
 
     private String nome;
     private int codigo;
 
+    private int id;
+
     public Candidato(){
 
+    }
+
+    public Candidato(int id){
+
+        this.id = id;
     }
 
     public Candidato(String nome, int codigo) {
         this.nome = nome;
         this.codigo = codigo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {

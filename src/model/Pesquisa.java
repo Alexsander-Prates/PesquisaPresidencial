@@ -7,6 +7,12 @@ public class Pesquisa   {
     private String instituto;
     private String regiao;
 
+    private int id;
+
+    public Pesquisa(int id) {
+        this.id = id;
+    }
+
     public Pesquisa(){
 
     }
@@ -14,6 +20,14 @@ public class Pesquisa   {
     public Pesquisa(String instituto, String regiao) {
         this.instituto = instituto;
         this.regiao = regiao;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getInstituto() {
