@@ -5,32 +5,36 @@ import java.util.List;
 public class Voto {
 
     private Double quantidade;
-    private Double totalVotos;
 
     private Candidato candidato;
 
     private Pesquisa pesquisa;
 
+    private List<PesquisaVoto> pesquisaVotos;
 
+    public Voto(Double quantidade, Candidato candidato, Pesquisa pesquisa, List<PesquisaVoto> pesquisaVotos) {
+        this.quantidade = quantidade;
+        this.candidato = candidato;
+        this.pesquisa = pesquisa;
+        this.pesquisaVotos = pesquisaVotos;
+    }
+
+    public Voto(Double quantidade, Candidato candidato) {
+        this.quantidade = quantidade;
+        this.candidato = candidato;
+    }
 
     public Voto(){
 
     }
 
-    public Voto(Double quantidade, Candidato candidato,Pesquisa pesquisa) {
+    public Voto(Double quantidade) {
         this.quantidade = quantidade;
-        this.candidato = candidato;
-        this.pesquisa = pesquisa;
+
     }
 
-
-
-    public Candidato getCandidato() {
-        return candidato;
-    }
-
-    public void setCandidato(Candidato candidato) {
-        this.candidato = candidato;
+    public List<PesquisaVoto> getPesquisaVotos() {
+        return pesquisaVotos;
     }
 
     public Pesquisa getPesquisa() {
@@ -39,6 +43,18 @@ public class Voto {
 
     public void setPesquisa(Pesquisa pesquisa) {
         this.pesquisa = pesquisa;
+    }
+
+    public void setPesquisaVotos(List<PesquisaVoto> pesquisaVotos) {
+        this.pesquisaVotos = pesquisaVotos;
+    }
+
+    public Candidato getCandidato() {
+        return candidato;
+    }
+
+    public void setCandidato(Candidato candidato) {
+        this.candidato = candidato;
     }
 
     public Double getQuantidade() {
