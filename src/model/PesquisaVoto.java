@@ -10,7 +10,7 @@ public class PesquisaVoto implements CalcularVotos{
 
     private Pesquisa pesquisa;
 
-    private Double quantidade = 0.0;
+    private Double quantidade1 = 0.0;
 
     public PesquisaVoto(Voto voto, Candidato candidato, Pesquisa pesquisa) {
         this.voto = voto;
@@ -50,11 +50,15 @@ public class PesquisaVoto implements CalcularVotos{
     public Double calcularVotos(List<PesquisaVoto> listVotos,String nomeCandidato) {
 
         listVotos.forEach(pesquisaVoto -> {
-            if(pesquisaVoto.getCandidato().getNome().equals(nomeCandidato)){
-                quantidade = quantidade + pesquisaVoto.voto.getQuantidade();
+            if(pesquisaVoto.getCandidato().getNome().equals(nomeCandidato)) {
+                quantidade1 = quantidade1 + pesquisaVoto.getVoto().getQuantidade();
+                if(nomeCandidato != pesquisaVoto.getCandidato().getNome()){
+                    quantidade1 = 0.0;
+                }
             }
+
         });
-        return quantidade;
+        return quantidade1;
     }
 
 }

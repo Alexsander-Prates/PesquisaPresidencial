@@ -9,7 +9,7 @@ import java.util.List;
 public class PesquisaController {
 
     public void salvar(Pesquisa pesquisa) throws Exception{
-        if (pesquisa.getInstituto() == null || pesquisa.getInstituto().length() <3){
+        if (pesquisa.getInstituto() == null || pesquisa.getInstituto().length() <2){
             throw new Exception("Instituto inválido para salvar");
         }
         PesquisaDao.getInstance().salvar(pesquisa);
@@ -17,7 +17,7 @@ public class PesquisaController {
     }
 
     public void atualizar(Pesquisa pesquisa) throws Exception{
-        if (pesquisa.getInstituto() == null || pesquisa.getInstituto().length()<3){
+        if (pesquisa.getInstituto() == null || pesquisa.getInstituto().length()<2){
             throw  new Exception(" Atualização de pesquisa inválidade");
         }
         PesquisaDao.getInstance().atualizar(pesquisa);

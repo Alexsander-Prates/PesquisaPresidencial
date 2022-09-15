@@ -25,11 +25,11 @@ public class CandidatoDao {
 
     public void salvar(Candidato candidato){
         try {
-            String sql = "insert into cliente (nome, codigo, id) values (? , ? , ?)";
+            String sql = "insert into Candidato (nome, codigo, id_candidato) values (? , ? , ?)";
             PreparedStatement preparedStatement = con.prepareStatement(sql);
             preparedStatement.setString(1, candidato.getNome());
             preparedStatement.setInt(2,candidato.getCodigo());
-            preparedStatement.setInt(2,candidato.getId());
+            preparedStatement.setInt(3,candidato.getId());
             preparedStatement.execute();
 
         }catch (SQLException e){
@@ -39,11 +39,11 @@ public class CandidatoDao {
 
     public void atualizar(Candidato candidato){
         try {
-            String sql = "update candidato set (nome = ?, codigo = ?, id = ?) where id = ?";
+            String sql = "update Candidato set (nome = ?, codigo = ?, id_candidato = ?) where id_candidato = ?";
             PreparedStatement preparedStatement = con.prepareStatement(sql);
             preparedStatement.setString(1, candidato.getNome());
             preparedStatement.setInt(2,candidato.getCodigo());
-            preparedStatement.setInt(2,candidato.getId());
+            preparedStatement.setInt(3,candidato.getId());
             preparedStatement.executeUpdate();
         }catch (SQLException e){
             e.printStackTrace();
@@ -52,7 +52,7 @@ public class CandidatoDao {
 
     public void excluir(int idCandidato){
         try {
-            String sql = "dele from candidato where id = ?";
+            String sql = "dele from Candidato where id_candidato = ?";
             PreparedStatement preparedStatement = con.prepareStatement(sql);
             preparedStatement.setInt(1,idCandidato);
             preparedStatement.executeUpdate();

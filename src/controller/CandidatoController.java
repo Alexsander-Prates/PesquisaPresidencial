@@ -21,7 +21,7 @@ public class CandidatoController {
         if (candidato.getNome() == null || candidato.getNome().length() <2){
             throw new Exception("Nome inválido para atualizar");
         }
-        CandidatoDao.getInstance().salvar(candidato);
+        CandidatoDao.getInstance().atualizar(candidato);
     }
 
     public void excluir(int idCandidato) throws Exception{

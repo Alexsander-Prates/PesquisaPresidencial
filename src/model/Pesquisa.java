@@ -1,16 +1,14 @@
 package model;
 
-import java.time.LocalDate;
-
 public class Pesquisa   {
 
     private String instituto;
     private String regiao;
 
-    private int id;
+    private int id_pesquisa;
 
-    public Pesquisa(int id) {
-        this.id = id;
+    public Pesquisa(int id_pesquisa) {
+        this.id_pesquisa = id_pesquisa;
     }
 
     public Pesquisa(){
@@ -22,12 +20,12 @@ public class Pesquisa   {
         this.regiao = regiao;
     }
 
-    public int getId() {
-        return id;
+    public int getId_pesquisa() {
+        return id_pesquisa;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_pesquisa(int id_pesquisa) {
+        this.id_pesquisa = id_pesquisa;
     }
 
     public String getInstituto() {

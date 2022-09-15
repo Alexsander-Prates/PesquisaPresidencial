@@ -1,7 +1,5 @@
 package DAO;
 
-import model.Candidato;
-import model.Pesquisa;
 import model.PesquisaVoto;
 import model.Voto;
 import util.ConnectionUtil;
@@ -30,7 +28,7 @@ public class VotoDao {
             PreparedStatement preparedStatement = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setDouble(1,voto.getQuantidade());
             preparedStatement.setInt(2,voto.getCandidato().getId());
-            preparedStatement.setInt(3,voto.getPesquisa().getId());
+            preparedStatement.setInt(3,voto.getPesquisa().getId_pesquisa());
             int key = preparedStatement.executeUpdate();
 
             if(key >=1){
@@ -44,7 +42,7 @@ public class VotoDao {
                 for(PesquisaVoto item: voto.getPesquisaVotos()) {
                     preparedStatementPesquisaVoto.setDouble(1,voto.getQuantidade());
                     preparedStatementPesquisaVoto.setInt(2,voto.getCandidato().getId());
-                    preparedStatementPesquisaVoto.setInt(3,voto.getPesquisa().getId());
+                    preparedStatementPesquisaVoto.setInt(3,voto.getPesquisa().getId_pesquisa());
                     preparedStatementPesquisaVoto.execute();
                 }
             }

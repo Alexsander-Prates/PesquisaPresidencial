@@ -1,6 +1,5 @@
 package DAO;
 
-import model.Candidato;
 import model.Pesquisa;
 import util.ConnectionUtil;
 
@@ -25,10 +24,11 @@ public class PesquisaDao {
 
     public void salvar(Pesquisa pesquisa) {
         try {
-            String sql = "insert into pesquisa (instituto, regiao), values (?,?)";
+            String sql = "insert into Pesquisa (instituto, regiao, id_pesquisa) values (?,?,?)";
             PreparedStatement preparedStatement = con.prepareStatement(sql);
             preparedStatement.setString(1, pesquisa.getInstituto());
             preparedStatement.setString(2, pesquisa.getRegiao());
+            preparedStatement.setInt(3, pesquisa.getId_pesquisa());
             preparedStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -36,11 +36,11 @@ public class PesquisaDao {
     }
     public void atualizar(Pesquisa pesquisa){
         try {
-            String sql = "update pesquisa set instituto = ?, regiao = ? where id = ?";
+            String sql = "update Pesquisa set instituto = ?, regiao = ? where id_pesquisa = ?";
             PreparedStatement preparedStatement = con.prepareStatement(sql);
             preparedStatement.setString(1,pesquisa.getInstituto());
             preparedStatement.setString(2,pesquisa.getRegiao());
-            preparedStatement.setInt(3,pesquisa.getId());
+            preparedStatement.setInt(3,pesquisa.getId_pesquisa());
             preparedStatement.executeUpdate();
         }catch (SQLException e){
             e.printStackTrace();
@@ -48,7 +48,7 @@ public class PesquisaDao {
     }
     public void excluir(int idPesquisa){
         try {
-            String sql = "delete from pesquisa where id = ?";
+            String sql = "delete from Pesquisa where id_pesquisa = ?";
             PreparedStatement preparedStatement = con.prepareStatement(sql);
             preparedStatement.setInt(1,idPesquisa);
             preparedStatement.execute();
@@ -60,14 +60,14 @@ public class PesquisaDao {
     public List<Pesquisa> listar(){
         List<Pesquisa> listaPesquisa = new ArrayList<>();
         try {
-            String sql = "select * from pesquisa";
+            String sql = "select * from Pesquisa";
             Statement statement = con.createStatement();
             ResultSet consultaSelect = statement.executeQuery(sql);
             while (consultaSelect.next()) {
                 Pesquisa c = new Pesquisa();
                 c.setInstituto(consultaSelect.getString("instituto"));
                 c.setRegiao(consultaSelect.getString("Região"));
-                c.setId(consultaSelect.getInt("id"));
+                c.setId_pesquisa(consultaSelect.getInt("id_pesquisa"));
                 listaPesquisa.add(c);
             }
         }catch (SQLException e){

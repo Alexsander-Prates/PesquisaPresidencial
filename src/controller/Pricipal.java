@@ -1,3 +1,5 @@
+package controller;
+
 import controller.CandidatoController;
 import model.Candidato;
 
