@@ -24,7 +24,7 @@ public class PesquisaDao {
 
     public void salvar(Pesquisa pesquisa) {
         try {
-            String sql = "insert into Pesquisa (instituto, regiao, id_pesquisa) values (?,?,?)";
+            String sql = "insert into Pesquisa (instituto, regiao, id) values (?,?,?)";
             PreparedStatement preparedStatement = con.prepareStatement(sql);
             preparedStatement.setString(1, pesquisa.getInstituto());
             preparedStatement.setString(2, pesquisa.getRegiao());

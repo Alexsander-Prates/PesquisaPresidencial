@@ -25,7 +25,7 @@ public class CandidatoDao {
 
     public void salvar(Candidato candidato){
         try {
-            String sql = "insert into Candidato (nome, codigo, id_candidato) values (? , ? , ?)";
+            String sql = "insert into Candidato (nome, codigo, id) values (? , ? , ?)";
             PreparedStatement preparedStatement = con.prepareStatement(sql);
             preparedStatement.setString(1, candidato.getNome());
             preparedStatement.setInt(2,candidato.getCodigo());
