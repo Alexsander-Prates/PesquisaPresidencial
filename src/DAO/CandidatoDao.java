@@ -64,14 +64,14 @@ public class CandidatoDao {
     public List<Candidato> listar(){
         List<Candidato> listaCandidatos = new ArrayList<>();
         try {
-            String sql = "select * from candidatos";
+            String sql = "select * from Candidato";
             //////////////////////////////////////////////////////////////////////
             Statement statement = con.createStatement();
             ResultSet consultaSelect = statement.executeQuery(sql);
             while (consultaSelect.next()) {
                 Candidato c = new Candidato();
                 c.setNome(consultaSelect.getString("nome"));
-                c.setCodigo(consultaSelect.getInt("Código"));
+                c.setCodigo(consultaSelect.getInt("Codigo"));
                 c.setId(consultaSelect.getInt("id"));
                 listaCandidatos.add(c);
             }

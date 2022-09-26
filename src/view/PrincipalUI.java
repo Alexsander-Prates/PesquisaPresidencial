@@ -64,6 +64,13 @@ public class PrincipalUI extends JFrame {
 		mnCandidato.add(mntmCancelamentos);
 		
 		JMenuItem mntmTabela = new JMenuItem("Consulta");
+		mntmTabela.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CandidatosSalvosUI candiSalvosUI = new CandidatosSalvosUI();
+				candiSalvosUI.setVisible(true);
+				contentPane.add(candiSalvosUI,0);
+			}
+		});
 		mnCandidato.add(mntmTabela);
 		
 		JMenu mnPesquisa = new JMenu("Pesquisa");
